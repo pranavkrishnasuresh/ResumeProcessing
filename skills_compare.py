@@ -23,7 +23,7 @@ def extract_skills(summary):
     skills_section = summary.split("Skills:")[1].split("Experiences:")[0].strip()
     return [skill.strip() for skill in skills_section.split(",")]
 
-cursor = db.your_collection_name.find({
+cursor = db.ResumeSummary.find({
     "$or": [
         {"company": {"$in": prestored_names}},
         {"job": {"$in": prestored_names}}
